@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import Prism from '../components/Prism';
 import Link from 'next/link';
 import Image from 'next/image';
 
