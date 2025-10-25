@@ -16,9 +16,9 @@ export default function Portfolio() {
   const divider2Ref = useRef<HTMLDivElement>(null)
   
   const [activeSection, setActiveSection] = useState('home')
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpe , setIsMenuOpen] = useState(false)
 
-  useEffect(() => {
+  useEffect(() => { 
     gsap.registerPlugin(ScrollTrigger)
     
     // Hero section animation
@@ -167,7 +167,7 @@ export default function Portfolio() {
   }
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen)
+    setIsMenuOpen(!isMenuOpe)
   }
 
   return (
@@ -230,7 +230,7 @@ export default function Portfolio() {
 
           {/* Mobile Menu Button */}
           <button 
-            className={`mobile-menu-button ${isMenuOpen ? 'open' : ''}`}
+            className={`mobile-menu-button ${isMenuOpe ? 'open' : ''}`}
             onClick={toggleMenu}
             aria-label="Toggle menu"
           >
@@ -240,10 +240,10 @@ export default function Portfolio() {
           </button>
 
           {/* Mobile Menu Overlay */}
-          <div className={`mobile-menu-overlay ${isMenuOpen ? 'open' : ''}`} onClick={toggleMenu}></div>
+          <div className={`mobile-menu-overlay ${isMenuOpe ? 'open' : ''}`} onClick={toggleMenu}></div>
 
           {/* Mobile Menu */}
-          <div className={`mobile-nav-links ${isMenuOpen ? 'open' : ''}`}>
+          <div className={`mobile-nav-links ${isMenuOpe ? 'open' : ''}`}>
             <button
               className={`mobile-nav-link ${activeSection === "home" ? "active" : ""}`}
               onClick={() => scrollToSection(heroRef)}
@@ -287,20 +287,6 @@ export default function Portfolio() {
       {/* Hero Section */}
       <section ref={heroRef} className="hero-section relative overflow-hidden">
         {/* Prism Background */}
-        <div className="absolute inset-0">
-          <Prism
-            animationType="rotate"
-            timeScale={0.5}
-            height={3.5}
-            baseWidth={5.5}
-            scale={3.6}
-            hueShift={0}
-            colorFrequency={1}
-            noise={0.5}
-            glow={1}
-          />
-        </div>
-
         {/* Hero Content */}
         <div className="hero-content relative z-10 text-center">
           <h1 className="hero-title">DWIKI HIDAYAT</h1>
